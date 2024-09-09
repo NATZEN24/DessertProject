@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    background-color: antiquewhite;
+    height: 100vh;
+
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat (2, 1fr);
+
+    grid-template-areas:
+    "main aside"
+    "main .";
+
+    
+
+
+}
+:root {
+    --maincolor:black;
+    --secondcolor: #796868;
+    --thirdcolor: #573939;
+    --pricecolor:#c9410c;
+
+    
+}
+main {
+    grid-area: main;
+
+    display: flex;
+   flex-wrap: wrap;
+  
+    background-color: antiquewhite;
+    padding: 20px;
+}
+h1 {
+    display: inline-block;
+    width: 100%;
+    padding-left: 1rem;
+}
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 1rem;
+
+    transition: .3s linear;
+
+}
+img:hover {
+  transform: scale(1.2);
+    border: 3px solid var(--pricecolor);
+    box-shadow: 0.5em 0.5em 1em  var(--pricecolor);
+  
+}
+div {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+   
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    border: .1rem solid;
+    position: relative;
+    top: -1rem;
+    left: 25%;
+      font-size: 1rem;
+      color: var(--thirdcolor);
+      width: 10rem;
+    
+    
+}
+.fa-solid {
+margin-right: 1rem;
+color: var(--pricecolor);
+font-size: 1.5rem; 
+}
+div > img + button + p:first-of-type{
+    color: var(--secondcolor);
+}
+div > img + button + p + p{
+    color: var(--thirdcolor);
+    font-weight: bold; 
+}
+div > img + button + p + p + p{
+    color: var(--pricecolor);
+    font-weight: bold;
+}
+
+@media screen and (max-width:400px) {
+    .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat (10, 1fr);
+
+    grid-template-areas:
+    "main"
+    "main"
+    "main"
+    "main"
+    "main"
+    "main"
+    "main"
+    "main"
+    "main"
+    "aside";
+}
+}
